@@ -14,16 +14,16 @@ function getWeather(){
         var test = date.toLocaleDateString('en-us', {day:"numeric"});
         var test2 = test%10;
         if(test2 == 1){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"st";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"st";
         }
         else if(test2 == 2){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"nd";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"nd";
         }
         else if(test2 == 3){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"rd";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"rd";
         }
         else{
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"th";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"th";
         }
         
         var condition = data.list[0].weather[0].main;
@@ -107,16 +107,16 @@ function getWeatherDefault(url){
         var test = date.toLocaleDateString('en-us', {day:"numeric"});
         var test2 = test%10;
         if(test2 == 1){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"st";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"st";
         }
         else if(test2 == 2){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"nd";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"nd";
         }
         else if(test2 == 3){
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"rd";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"rd";
         }
         else{
-            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"short", month:"long", day:"numeric"}) +"th";
+            document.getElementById("date").innerHTML = date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"}) +"th";
         }
         
         var condition = data.list[0].weather[0].main;
