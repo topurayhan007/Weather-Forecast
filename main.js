@@ -97,12 +97,10 @@ function getWeather(url){
 }
 
 function defaultLocation(){
-    var lat = "";
-    var lon = "";
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
             var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric"
