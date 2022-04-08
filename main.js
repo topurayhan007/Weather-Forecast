@@ -190,7 +190,7 @@ function defaultLocation(){
         navigator.geolocation.getCurrentPosition(function(position){
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric"
+            var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric";
             getWeatherDefault(url);    
         },
         function(error) {
