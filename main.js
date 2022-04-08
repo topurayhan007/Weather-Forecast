@@ -105,10 +105,15 @@ function defaultLocation(){
             lon = position.coords.longitude;
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
-            var urll = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric"
-            getWeather(urll);
+            var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric"
+            getWeather(url);
             
 
+        },
+        function(error) {
+          if (error.code == error.PERMISSION_DENIED)
+          var urll = "https://api.openweathermap.org/data/2.5/forecast?q="+input.value+ "&appid=e77939354c74a1379070653fce5442a6&units=metric";
+          getWeather(url);
         });
     }
     else{
