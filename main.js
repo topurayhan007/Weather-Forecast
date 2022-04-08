@@ -1,7 +1,11 @@
-var input = document.getElementById("search");
+// var input = document.getElementById("search");
+// console.log(input.value);
+// var urll = "https://api.openweathermap.org/data/2.5/forecast?q="+input.value+ "&appid=e77939354c74a1379070653fce5442a6&units=metric";
 
-function getWeather(){
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+ '&appid=e77939354c74a1379070653fce5442a6&units=metric') 
+
+function getWeather(urll){
+    // fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+ '&appid=e77939354c74a1379070653fce5442a6&units=metric') 
+    fetch(urll)
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
         console.log(data);
@@ -93,6 +97,23 @@ function getWeather(){
 }
 
 function defaultLocation(){
-    input.value = "Dhaka";
-    getWeather();
+    var lat = "";
+    var lon = "";
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+            var urll = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric"
+            getWeather(urll);
+            
+
+        });
+    }
+    else{
+        console.log("Geolocation is not supported");
+
+    }
+    
 }
