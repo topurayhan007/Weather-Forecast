@@ -3,9 +3,9 @@
 // var urll = "https://api.openweathermap.org/data/2.5/forecast?q="+input.value+ "&appid=e77939354c74a1379070653fce5442a6&units=metric";
 
 
-function getWeather(urll){
+function getWeather(url){
     // fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+ '&appid=e77939354c74a1379070653fce5442a6&units=metric') 
-    fetch(urll)
+    fetch(url)
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
         console.log(data);
