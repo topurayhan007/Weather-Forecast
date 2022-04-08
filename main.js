@@ -112,7 +112,7 @@ function defaultLocation(){
         },
         function(error) {
           if (error.code == error.PERMISSION_DENIED)
-          var urll = "https://api.openweathermap.org/data/2.5/forecast?q="+input.value+ "&appid=e77939354c74a1379070653fce5442a6&units=metric";
+          var urll = "https://api.openweathermap.org/data/2.5/forecast?q=Dhaka&appid=e77939354c74a1379070653fce5442a6&units=metric";
           getWeather(url);
         });
     }
