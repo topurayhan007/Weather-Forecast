@@ -1,7 +1,9 @@
-var input = document.getElementById("search");
+const key = 'e77939354c74a1379070653fce5442a6';
+const input = document.getElementById("search");
+console.log(key);
 
 function getWeather(){
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+ '&appid=e77939354c74a1379070653fce5442a6&units=metric') 
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+ '&appid='+key+'&units=metric') 
     .then(function(resp) { return resp.json() })
     .then(function(data) {
         console.log(data);
@@ -190,12 +192,12 @@ function defaultLocation(){
         navigator.geolocation.getCurrentPosition(function(position){
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=e77939354c74a1379070653fce5442a6&units=metric";
+            var url = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid="+key+"&units=metric";
             getWeatherDefault(url);    
         },
         function(error) {
           if (error.code == error.PERMISSION_DENIED)
-          var url = "https://api.openweathermap.org/data/2.5/forecast?q=Dhaka&appid=e77939354c74a1379070653fce5442a6&units=metric";
+          var url = "https://api.openweathermap.org/data/2.5/forecast?q=Dhaka&appid="+key+"&units=metric";
           getWeatherDefault(url);
         });
     }
