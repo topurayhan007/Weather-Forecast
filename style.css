@@ -37,6 +37,9 @@ body{
     color: #384974;
     
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 #search{
     border: none;
@@ -84,9 +87,9 @@ body{
 #descM{
     font-weight: bold;
 }
-/* #fiveDay::-webkit-scrollbar{
+#fiveDay::-webkit-scrollbar{
     display: none;
-} */
+}
 #fiveDay h1,h3,h4{
     font-weight: bold;
 }
@@ -97,6 +100,8 @@ body{
 #fiveDay{
     border-radius: 0.5rem;
     font-weight: bold;
+    overflow-x: scroll;
+    
 }
 #fiveDayTiles{
     min-width: 10rem;
