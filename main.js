@@ -208,15 +208,25 @@ function defaultLocation(){
     
 }
 
-const target = document.querySelector('fiveDayTiles')
+addHorizontalScroll('fiveDay');
 
-target.addEventListener('wheel', event => {
-  const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
-  const toRight = event.deltaY > 0 && target.scrollLeft < target.scrollWidth - target.clientWidth
+function addHorizontalScroll(blockId) {
+    let block = document.getElementById(blockId);
 
-  if (toLeft || toRight) {
-    event.preventDefault()
-    target.scrollLeft += event.deltaY
-  }
-})
+    block.addEventListener("wheel", function (evt) {
+        let maxScroll = block.scrollWidth - block.offsetWidth;
+        let currentScroll = block.scrollLeft + evt.deltaY;
+
+        if (currentScroll > 0 && currentScroll < maxScroll) {
+            evt.preventDefault();
+            block.scrollLeft = currentScroll;
+        }
+        else if (currentScroll <= 0) {
+            block.scrollLeft = 0;
+        }
+        else {
+            block.scrollLeft = maxScroll;
+        }
+    });
+}
 
