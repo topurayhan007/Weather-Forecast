@@ -38,7 +38,7 @@ body{
     
 }
 body::-webkit-scrollbar {
-    display: none;
+    display: none !important;
 }
 
 #search{
@@ -88,7 +88,7 @@ body::-webkit-scrollbar {
     font-weight: bold;
 }
 #fiveDay::-webkit-scrollbar{
-    display: none;
+    display: none !important;
 }
 #fiveDay h1,h3,h4{
     font-weight: bold;
