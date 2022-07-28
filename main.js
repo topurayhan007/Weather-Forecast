@@ -1,4 +1,4 @@
-const target = document.querySelector('fiveDay')
+const target = document.querySelector('fiveDayTiles')
 
 target.addEventListener('wheel', event => {
   const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
