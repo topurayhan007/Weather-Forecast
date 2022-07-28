@@ -207,3 +207,10 @@ function defaultLocation(){
     }
     
 }
+
+const scrollContainer = document.querySelector("fiveDay");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+});
