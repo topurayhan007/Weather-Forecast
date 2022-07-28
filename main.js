@@ -208,7 +208,7 @@ function defaultLocation(){
     
 }
 
-const target = document.querySelector('fiveDayTiles')
+const target = document.querySelector('fiveDay')
 
 target.addEventListener('wheel', event => {
   const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
