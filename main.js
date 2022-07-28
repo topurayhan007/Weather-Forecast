@@ -1,15 +1,3 @@
-const target = document.querySelector('fiveDayTiles')
-
-target.addEventListener('wheel', event => {
-  const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
-  const toRight = event.deltaY > 0 && target.scrollLeft < target.scrollWidth - target.clientWidth
-
-  if (toLeft || toRight) {
-    event.preventDefault()
-    target.scrollLeft += event.deltaY
-  }
-})
-
 const key = 'e77939354c74a1379070653fce5442a6';
 const input = document.getElementById("search");
 console.log(key);
@@ -220,4 +208,15 @@ function defaultLocation(){
     
 }
 
+const target = document.querySelector('fiveDayTiles')
+
+target.addEventListener('wheel', event => {
+  const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
+  const toRight = event.deltaY > 0 && target.scrollLeft < target.scrollWidth - target.clientWidth
+
+  if (toLeft || toRight) {
+    event.preventDefault()
+    target.scrollLeft += event.deltaY
+  }
+})
 
