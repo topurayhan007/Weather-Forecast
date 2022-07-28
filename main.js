@@ -208,9 +208,14 @@ function defaultLocation(){
     
 }
 
-const scrollContainer = document.querySelector("fiveDay");
+const target = document.querySelector('fiveDay')
 
-scrollContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY;
-});
+target.addEventListener('wheel', event => {
+  const toLeft  = event.deltaY < 0 && target.scrollLeft > 0
+  const toRight = event.deltaY > 0 && target.scrollLeft < target.scrollWidth - target.clientWidth
+
+  if (toLeft || toRight) {
+    event.preventDefault()
+    target.scrollLeft += event.deltaY
+  }
+})
