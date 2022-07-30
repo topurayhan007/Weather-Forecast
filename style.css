@@ -101,6 +101,7 @@ body::-webkit-scrollbar {
     border-radius: 0.5rem;
     font-weight: bold;
     overflow-x: scroll;
+    display: flex;
     
 }
 #fiveDayTiles{
