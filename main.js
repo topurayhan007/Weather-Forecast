@@ -165,11 +165,6 @@ function getWeatherDefault(url){
             var dateTemp = new Date(tempDate);
             var currTempDate = dateTemp.toLocaleDateString('en-us');
             
-            
-            
-
-    
-            
             if(currTempDate > currDate && time == '12:00:00' && counter < 4){
                 currDate = currTempDate;
                 counter++;
