@@ -152,7 +152,9 @@ function getWeatherDefault(url){
         document.getElementById("pressure").innerHTML = "Pressure: "+data.list[0].main.pressure +" Pa";
         document.getElementById("visible").innerHTML = "Visibility: "+ (data.list[0].visibility)/1000 + " Km";
 
-        var currDate = date.toLocaleDateString('en-us', {day:"numeric"});
+        
+        var currDate = date.toLocaleDateString('en-us'); 
+    
         var counter =0;
 
         for(let i = 0; i < 40; ++i){
@@ -161,13 +163,14 @@ function getWeatherDefault(url){
             var time = tempTime[1];
 
             var dateTemp = new Date(tempDate);
-            var currTempDate = dateTemp.toLocaleDateString('en-us', {day:"numeric"});
+            var currTempDate = dateTemp.toLocaleDateString('en-us');
             
             
-            var currDate2 = parseInt(currDate);
-            var currTempDate2 = parseInt(currTempDate);
             
-            if(currTempDate2 > currDate2 && time == '12:00:00' && counter < 4){
+
+    
+            
+            if(currTempDate > currDate && time == '12:00:00' && counter < 4){
                 currDate = currTempDate;
                 counter++;
                 
@@ -176,7 +179,7 @@ function getWeatherDefault(url){
                 document.getElementById("temp"+counter).innerHTML = Math.ceil(data.list[i].main.temp) + "°C";
                 document.getElementById("desc"+counter).innerHTML = data.list[i].weather[0].description;
 
-                // console.log(dateTemp);
+                console.log(dateTemp);
             }
             
         }
