@@ -208,4 +208,25 @@ function defaultLocation(){
     
 }
 
+addHorizontalScroll('fiveDay');
+
+function addHorizontalScroll(blockId) {
+    let block = document.getElementById(blockId);
+
+    block.addEventListener("wheel", function (evt) {
+        let maxScroll = block.scrollWidth - block.offsetWidth;
+        let currentScroll = block.scrollLeft + evt.deltaY;
+
+        if (currentScroll > 0 && currentScroll < maxScroll) {
+            evt.preventDefault();
+            block.scrollLeft = currentScroll;
+        }
+        else if (currentScroll <= 0) {
+            block.scrollLeft = 0;
+        }
+        else {
+            block.scrollLeft = maxScroll;
+        }
+    });
+}
 
